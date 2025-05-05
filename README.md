@@ -93,5 +93,5 @@ Please cite our paper if you use this code:
 }
 
 ## 🛡️ License
-
+A Step towards Interpretable Multimodal AI Models with MultiFIX © 2025 by Mafalda Malafaia, Thalea Schlender, Tanja Alderliesten, and Peter A. N. Bosman is licensed under CC BY-NC-ND 4.0 
 
