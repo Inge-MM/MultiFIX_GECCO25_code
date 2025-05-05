@@ -27,6 +27,7 @@ MultiFIX supports **tabular + image** data and enforces compact, interpretable f
 ---
 
 ## 📁 Project Structure
+```
 ├── problems/ # Synthetic problems configurations
 ├── models/ # To add saved models, including weights for feature engineering blocks
 ├── dependencies/ # python files needed in the training stage of MultiFIX
@@ -38,15 +39,16 @@ MultiFIX supports **tabular + image** data and enforces compact, interpretable f
 │ ├── ae.py # train auto-encoder and save weights for image feature engineering block
 │ ├── config_file.py # set configurations for experiment, i.e. data_dir, problem to solve, data modalities to use, etc.
 │ ├── hpo.py # Train model using grid search for hyper-parameter optimization
-| ├── stats.ipynb # notebook to analyze statistical significance and normal distribution 
-| ├── xai.ipynb # notebook used for inference stage: grad-cam to explain image features and gp to get symbolic expressions 
-|                      (script is a proxy that generates gp files and computes the accuracy of the symbolic expression from gp)
-| ├── xai_img.ipynb # notebook used for to better understand image engineered features for multifeature problem
+│ ├── stats.ipynb # notebook to analyze statistical significance and normal distribution 
+│ ├── xai.ipynb # notebook used for inference stage: grad-cam to explain image features and gp to get symbolic expressions 
+│                      (script is a proxy that generates gp files and computes the accuracy of the symbolic expression from gp)
+│ ├── xai_img.ipynb # notebook used for to better understand image engineered features for multifeature problem
 │ └── improve_ae.ipynb # non-essencial: used to visualize reconstructed images using AE
 ├── hpo_results/ # Output text files with training information
 ├── env_specs.txt # Env requirements
 ├── README.md
 └── LICENSE
+```
 
 
 ---
