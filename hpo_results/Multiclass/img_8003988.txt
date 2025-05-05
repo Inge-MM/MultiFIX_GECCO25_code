@@ -1,0 +1,803 @@
+no change     /sw/arch/RHEL8/EB_production/2022/software/Miniconda3/4.12.0/condabin/conda
+no change     /sw/arch/RHEL8/EB_production/2022/software/Miniconda3/4.12.0/bin/conda
+no change     /sw/arch/RHEL8/EB_production/2022/software/Miniconda3/4.12.0/bin/conda-env
+no change     /sw/arch/RHEL8/EB_production/2022/software/Miniconda3/4.12.0/bin/activate
+no change     /sw/arch/RHEL8/EB_production/2022/software/Miniconda3/4.12.0/bin/deactivate
+no change     /sw/arch/RHEL8/EB_production/2022/software/Miniconda3/4.12.0/etc/profile.d/conda.sh
+no change     /sw/arch/RHEL8/EB_production/2022/software/Miniconda3/4.12.0/etc/fish/conf.d/conda.fish
+no change     /sw/arch/RHEL8/EB_production/2022/software/Miniconda3/4.12.0/shell/condabin/Conda.psm1
+no change     /sw/arch/RHEL8/EB_production/2022/software/Miniconda3/4.12.0/shell/condabin/conda-hook.ps1
+no change     /sw/arch/RHEL8/EB_production/2022/software/Miniconda3/4.12.0/lib/python3.8/site-packages/xontrib/conda.xsh
+no change     /sw/arch/RHEL8/EB_production/2022/software/Miniconda3/4.12.0/etc/profile.d/conda.csh
+no change     /home/mmalafaia/.bashrc
+No action taken.
+[/bin/bash] #### Starting test
+[/bin/bash] ## This is mmalafaia on gcn21 and this job has the ID 8003988
+[/bin/bash] ## current working directory: /gpfs/home3/mmalafaia/MultiFIX_ProofOfConcept
+/gpfs/home3/mmalafaia/MultiFIX_ProofOfConcept/scripts/hpo.py:55: FutureWarning: Indexing with multiple keys (implicitly converted to a tuple of keys) will be deprecated, use a list instead.
+  grouped_results = test_results.groupby(['LR', 'WD', 'Z_img', 'Z_tab'])['BCELoss','AUROC','BAcc'].mean().reset_index()
+!!!!!!!!!!!!!!!! Multiclass Problem: 2*circle + A; TRAINING =  end ; INPUT =  img ; OUT_SIZE =  4 ; WTS =  single ; TEMP_FREEZE =  False
+*** LR =  0.001 ; WD =  0.001 ; IMG_FTS =  4 ; TAB_FTS =  0  ***
+#0: train loss = 1.01531; val loss = 3.79263
+#1: train loss = 0.78805; val loss = 0.99831
+#2: train loss = 0.75127; val loss = 0.79472
+#3: train loss = 0.72314; val loss = 0.78088
+#4: train loss = 0.68451; val loss = 0.90834
+#5: train loss = 0.63547; val loss = 3.83142
+#6: train loss = 0.61205; val loss = 1.56314
+#7: train loss = 0.58270; val loss = 1.33948
+#8: train loss = 0.42755; val loss = 1.37502
+*** RUN 0 ***
+   *Test Loss=0.84893
+   *AUC=0.83024
+   *BAcc=0.79750
+#0: train loss = 0.97070; val loss = 0.95818
+#1: train loss = 0.79958; val loss = 2.05404
+#2: train loss = 0.79235; val loss = 0.81140
+#3: train loss = 0.77510; val loss = 0.82680
+#4: train loss = 0.71531; val loss = 1.59198
+#5: train loss = 0.63877; val loss = 2.45081
+#6: train loss = 0.46486; val loss = 1.58595
+#7: train loss = 0.41008; val loss = 6.12780
+*** RUN 1 ***
+   *Test Loss=0.80719
+   *AUC=0.83567
+   *BAcc=0.81750
+#0: train loss = 0.93113; val loss = 0.95135
+#1: train loss = 0.77635; val loss = 0.86302
+#2: train loss = 0.70732; val loss = 1.04876
+#3: train loss = 0.64067; val loss = 3.02557
+#4: train loss = 0.58609; val loss = 1.10630
+#5: train loss = 0.46166; val loss = 3.23509
+#6: train loss = 0.36899; val loss = 1.23766
+*** RUN 2 ***
+   *Test Loss=0.84200
+   *AUC=0.82658
+   *BAcc=0.80250
+#0: train loss = 1.01102; val loss = 1.13825
+#1: train loss = 0.79777; val loss = 1.04774
+#2: train loss = 0.73841; val loss = 0.81478
+#3: train loss = 0.71338; val loss = 0.81514
+#4: train loss = 0.65803; val loss = 0.92459
+#5: train loss = 0.62242; val loss = 1.02828
+#6: train loss = 0.52813; val loss = 4.47672
+#7: train loss = 0.43214; val loss = 2.01229
+*** RUN 3 ***
+   *Test Loss=0.81980
+   *AUC=0.83224
+   *BAcc=0.81833
+#0: train loss = 0.98410; val loss = 3.95511
+#1: train loss = 0.77340; val loss = 0.82602
+#2: train loss = 0.74019; val loss = 0.81825
+#3: train loss = 0.64348; val loss = 1.61602
+#4: train loss = 0.56653; val loss = 1.56860
+#5: train loss = 0.44992; val loss = 1.97226
+#6: train loss = 0.42345; val loss = 1.80550
+#7: train loss = 0.40088; val loss = 1.76446
+*** RUN 4 ***
+   *Test Loss=0.84021
+   *AUC=0.82841
+   *BAcc=0.79750
+*** LR =  0.0001 ; WD =  0.001 ; IMG_FTS =  4 ; TAB_FTS =  0  ***
+#0: train loss = 1.14329; val loss = 0.94078
+#1: train loss = 0.70286; val loss = 0.81941
+#2: train loss = 0.38706; val loss = 0.85730
+#3: train loss = 0.12201; val loss = 1.00091
+#4: train loss = 0.03486; val loss = 1.00725
+#5: train loss = 0.02028; val loss = 1.06862
+#6: train loss = 0.01122; val loss = 1.06864
+*** RUN 0 ***
+   *Test Loss=0.85473
+   *AUC=0.82931
+   *BAcc=0.80500
+#0: train loss = 1.11595; val loss = 0.97618
+#1: train loss = 0.66571; val loss = 0.89477
+#2: train loss = 0.32446; val loss = 1.02197
+#3: train loss = 0.09362; val loss = 1.16373
+#4: train loss = 0.03154; val loss = 1.22601
+#5: train loss = 0.01996; val loss = 1.29256
+#6: train loss = 0.00831; val loss = 1.29354
+*** RUN 1 ***
+   *Test Loss=0.83072
+   *AUC=0.83643
+   *BAcc=0.80833
+#0: train loss = 1.13004; val loss = 0.95388
+#1: train loss = 0.66871; val loss = 0.86363
+#2: train loss = 0.35467; val loss = 0.93336
+#3: train loss = 0.12496; val loss = 0.99291
+#4: train loss = 0.03104; val loss = 1.02737
+#5: train loss = 0.01604; val loss = 1.12118
+#6: train loss = 0.01005; val loss = 1.11101
+*** RUN 2 ***
+   *Test Loss=0.85282
+   *AUC=0.82427
+   *BAcc=0.80917
+#0: train loss = 1.13446; val loss = 0.99706
+#1: train loss = 0.69993; val loss = 0.81657
+#2: train loss = 0.39607; val loss = 0.81326
+#3: train loss = 0.11507; val loss = 0.87722
+#4: train loss = 0.03005; val loss = 0.94966
+#5: train loss = 0.01530; val loss = 0.96402
+#6: train loss = 0.01244; val loss = 1.02642
+#7: train loss = 0.00805; val loss = 1.00672
+*** RUN 3 ***
+   *Test Loss=0.86426
+   *AUC=0.83873
+   *BAcc=0.80333
+#0: train loss = 1.16162; val loss = 0.98239
+#1: train loss = 0.65812; val loss = 0.83071
+#2: train loss = 0.36978; val loss = 0.87328
+#3: train loss = 0.12659; val loss = 0.93925
+#4: train loss = 0.03974; val loss = 1.04553
+#5: train loss = 0.01509; val loss = 1.06225
+#6: train loss = 0.01011; val loss = 1.07580
+*** RUN 4 ***
+   *Test Loss=0.85495
+   *AUC=0.82293
+   *BAcc=0.80083
+*** LR =  1e-05 ; WD =  0.001 ; IMG_FTS =  4 ; TAB_FTS =  0  ***
+#0: train loss = 1.38825; val loss = 1.37817
+#1: train loss = 1.25299; val loss = 1.25937
+#2: train loss = 1.14895; val loss = 1.16902
+#3: train loss = 1.05013; val loss = 1.10113
+#4: train loss = 0.96304; val loss = 1.04509
+#5: train loss = 0.89026; val loss = 0.99943
+#6: train loss = 0.82293; val loss = 0.96654
+#7: train loss = 0.75910; val loss = 0.94400
+#8: train loss = 0.69474; val loss = 0.92264
+#9: train loss = 0.64396; val loss = 0.90733
+#10: train loss = 0.59007; val loss = 0.89160
+#11: train loss = 0.53339; val loss = 0.88427
+#12: train loss = 0.47222; val loss = 0.87797
+#13: train loss = 0.42116; val loss = 0.87212
+#14: train loss = 0.36239; val loss = 0.86865
+#15: train loss = 0.33506; val loss = 0.86846
+#16: train loss = 0.28573; val loss = 0.87034
+#17: train loss = 0.24154; val loss = 0.87101
+#18: train loss = 0.20258; val loss = 0.87340
+#19: train loss = 0.17379; val loss = 0.87402
+#20: train loss = 0.15372; val loss = 0.87910
+*** RUN 0 ***
+   *Test Loss=0.90849
+   *AUC=0.82912
+   *BAcc=0.78750
+#0: train loss = 1.36844; val loss = 1.37632
+#1: train loss = 1.24658; val loss = 1.27900
+#2: train loss = 1.14520; val loss = 1.20220
+#3: train loss = 1.04392; val loss = 1.13755
+#4: train loss = 0.95215; val loss = 1.08421
+#5: train loss = 0.86542; val loss = 1.04167
+#6: train loss = 0.80034; val loss = 1.00547
+#7: train loss = 0.72942; val loss = 0.98038
+#8: train loss = 0.66254; val loss = 0.96432
+#9: train loss = 0.60236; val loss = 0.95078
+#10: train loss = 0.53479; val loss = 0.94370
+#11: train loss = 0.47968; val loss = 0.93893
+#12: train loss = 0.41505; val loss = 0.93877
+#13: train loss = 0.35588; val loss = 0.93806
+#14: train loss = 0.30245; val loss = 0.94752
+#15: train loss = 0.25615; val loss = 0.94912
+#16: train loss = 0.22228; val loss = 0.96268
+#17: train loss = 0.19035; val loss = 0.96201
+#18: train loss = 0.16342; val loss = 0.97571
+*** RUN 1 ***
+   *Test Loss=0.89151
+   *AUC=0.84098
+   *BAcc=0.72917
+#0: train loss = 1.38610; val loss = 1.36606
+#1: train loss = 1.24391; val loss = 1.26142
+#2: train loss = 1.13412; val loss = 1.17061
+#3: train loss = 1.03219; val loss = 1.10236
+#4: train loss = 0.94598; val loss = 1.04477
+#5: train loss = 0.87656; val loss = 1.00128
+#6: train loss = 0.80326; val loss = 0.96588
+#7: train loss = 0.73963; val loss = 0.94131
+#8: train loss = 0.68442; val loss = 0.92164
+#9: train loss = 0.62761; val loss = 0.90802
+#10: train loss = 0.57325; val loss = 0.88988
+#11: train loss = 0.52495; val loss = 0.88670
+#12: train loss = 0.47307; val loss = 0.87535
+#13: train loss = 0.41260; val loss = 0.86939
+#14: train loss = 0.36162; val loss = 0.86767
+#15: train loss = 0.31095; val loss = 0.86482
+#16: train loss = 0.26999; val loss = 0.86564
+#17: train loss = 0.23673; val loss = 0.86348
+#18: train loss = 0.19795; val loss = 0.86654
+#19: train loss = 0.16373; val loss = 0.87251
+#20: train loss = 0.13974; val loss = 0.87548
+#21: train loss = 0.12427; val loss = 0.87986
+#22: train loss = 0.10136; val loss = 0.88522
+*** RUN 2 ***
+   *Test Loss=0.92389
+   *AUC=0.82710
+   *BAcc=0.78083
+#0: train loss = 1.37666; val loss = 1.36076
+#1: train loss = 1.24484; val loss = 1.25895
+#2: train loss = 1.13678; val loss = 1.17410
+#3: train loss = 1.03765; val loss = 1.10779
+#4: train loss = 0.95104; val loss = 1.04817
+#5: train loss = 0.87975; val loss = 1.00272
+#6: train loss = 0.80545; val loss = 0.96458
+#7: train loss = 0.74785; val loss = 0.93365
+#8: train loss = 0.68497; val loss = 0.91034
+#9: train loss = 0.62856; val loss = 0.89102
+#10: train loss = 0.56821; val loss = 0.87703
+#11: train loss = 0.50956; val loss = 0.86624
+#12: train loss = 0.45935; val loss = 0.86037
+#13: train loss = 0.41323; val loss = 0.85214
+#14: train loss = 0.35633; val loss = 0.84595
+#15: train loss = 0.30958; val loss = 0.84465
+#16: train loss = 0.26228; val loss = 0.84212
+#17: train loss = 0.24811; val loss = 0.84443
+#18: train loss = 0.20828; val loss = 0.84284
+#19: train loss = 0.17027; val loss = 0.84350
+#20: train loss = 0.14551; val loss = 0.84795
+#21: train loss = 0.12635; val loss = 0.85286
+*** RUN 3 ***
+   *Test Loss=0.89490
+   *AUC=0.82288
+   *BAcc=0.80583
+#0: train loss = 1.37803; val loss = 1.34776
+#1: train loss = 1.25513; val loss = 1.25835
+#2: train loss = 1.14869; val loss = 1.17118
+#3: train loss = 1.05598; val loss = 1.10242
+#4: train loss = 0.97477; val loss = 1.04750
+#5: train loss = 0.89297; val loss = 0.99617
+#6: train loss = 0.84633; val loss = 0.95713
+#7: train loss = 0.77843; val loss = 0.92780
+#8: train loss = 0.71835; val loss = 0.90654
+#9: train loss = 0.65993; val loss = 0.89183
+#10: train loss = 0.60215; val loss = 0.88168
+#11: train loss = 0.55078; val loss = 0.87463
+#12: train loss = 0.49916; val loss = 0.86767
+#13: train loss = 0.44269; val loss = 0.86588
+#14: train loss = 0.39272; val loss = 0.87330
+#15: train loss = 0.33149; val loss = 0.87455
+#16: train loss = 0.28186; val loss = 0.88371
+#17: train loss = 0.24168; val loss = 0.88990
+#18: train loss = 0.20340; val loss = 0.89466
+*** RUN 4 ***
+   *Test Loss=0.89682
+   *AUC=0.82737
+   *BAcc=0.78750
+*** LR =  0.001 ; WD =  0.0001 ; IMG_FTS =  4 ; TAB_FTS =  0  ***
+#0: train loss = 1.00781; val loss = 3.69602
+#1: train loss = 0.80316; val loss = 0.79143
+#2: train loss = 0.75334; val loss = 0.75483
+#3: train loss = 0.71559; val loss = 1.01456
+#4: train loss = 0.64719; val loss = 2.00283
+#5: train loss = 0.56074; val loss = 3.20854
+#6: train loss = 0.41775; val loss = 2.80807
+#7: train loss = 0.38540; val loss = 2.47168
+*** RUN 0 ***
+   *Test Loss=0.79832
+   *AUC=0.82658
+   *BAcc=0.81250
+#0: train loss = 1.03296; val loss = 1.19825
+#1: train loss = 0.76419; val loss = 0.78171
+#2: train loss = 0.76573; val loss = 1.08733
+#3: train loss = 0.64323; val loss = 1.56058
+#4: train loss = 0.54553; val loss = 1.67160
+#5: train loss = 0.44002; val loss = 1.72810
+#6: train loss = 0.37472; val loss = 2.47875
+*** RUN 1 ***
+   *Test Loss=0.82010
+   *AUC=0.82447
+   *BAcc=0.81083
+#0: train loss = 0.91906; val loss = 0.92048
+#1: train loss = 0.77872; val loss = 0.84101
+#2: train loss = 0.75133; val loss = 1.10133
+#3: train loss = 0.63923; val loss = 8.02744
+#4: train loss = 0.56499; val loss = 1.03694
+#5: train loss = 0.49597; val loss = 1.52166
+#6: train loss = 0.39369; val loss = 6.02823
+*** RUN 2 ***
+   *Test Loss=0.85494
+   *AUC=0.83208
+   *BAcc=0.82167
+#0: train loss = 0.97790; val loss = 0.87722
+#1: train loss = 0.78268; val loss = 1.26250
+#2: train loss = 0.76756; val loss = 0.85611
+#3: train loss = 0.70990; val loss = 0.86937
+#4: train loss = 0.71393; val loss = 1.62797
+#5: train loss = 0.63500; val loss = 3.45477
+#6: train loss = 0.53324; val loss = 7.01480
+#7: train loss = 0.47153; val loss = 4.83493
+*** RUN 3 ***
+   *Test Loss=0.82986
+   *AUC=0.82783
+   *BAcc=0.80917
+#0: train loss = 0.95073; val loss = 1.58745
+#1: train loss = 0.78262; val loss = 0.86265
+#2: train loss = 0.66593; val loss = 1.03808
+#3: train loss = 0.55772; val loss = 0.99162
+#4: train loss = 0.46022; val loss = 1.06996
+#5: train loss = 0.40772; val loss = 2.51497
+#6: train loss = 0.38687; val loss = 1.94855
+*** RUN 4 ***
+   *Test Loss=0.82917
+   *AUC=0.82642
+   *BAcc=0.81083
+*** LR =  0.0001 ; WD =  0.0001 ; IMG_FTS =  4 ; TAB_FTS =  0  ***
+#0: train loss = 1.14309; val loss = 0.94353
+#1: train loss = 0.70213; val loss = 0.82171
+#2: train loss = 0.38534; val loss = 0.86064
+#3: train loss = 0.12218; val loss = 0.98918
+#4: train loss = 0.03516; val loss = 0.99137
+#5: train loss = 0.02042; val loss = 1.07283
+#6: train loss = 0.01129; val loss = 1.07386
+*** RUN 0 ***
+   *Test Loss=0.85175
+   *AUC=0.82973
+   *BAcc=0.80583
+#0: train loss = 1.11619; val loss = 0.97909
+#1: train loss = 0.66620; val loss = 0.90090
+#2: train loss = 0.32446; val loss = 1.03115
+#3: train loss = 0.09298; val loss = 1.19517
+#4: train loss = 0.03104; val loss = 1.23753
+#5: train loss = 0.01981; val loss = 1.29189
+#6: train loss = 0.00800; val loss = 1.30503
+*** RUN 1 ***
+   *Test Loss=0.83096
+   *AUC=0.83747
+   *BAcc=0.80917
+#0: train loss = 1.13011; val loss = 0.95545
+#1: train loss = 0.66885; val loss = 0.86370
+#2: train loss = 0.35290; val loss = 0.93571
+#3: train loss = 0.12445; val loss = 0.99927
+#4: train loss = 0.03086; val loss = 1.02907
+#5: train loss = 0.01569; val loss = 1.11395
+#6: train loss = 0.00997; val loss = 1.11879
+*** RUN 2 ***
+   *Test Loss=0.85217
+   *AUC=0.82488
+   *BAcc=0.80583
+#0: train loss = 1.13379; val loss = 1.00093
+#1: train loss = 0.69770; val loss = 0.81677
+#2: train loss = 0.39441; val loss = 0.81629
+#3: train loss = 0.11549; val loss = 0.86963
+#4: train loss = 0.03000; val loss = 0.95970
+#5: train loss = 0.01526; val loss = 0.96623
+#6: train loss = 0.01226; val loss = 1.01690
+#7: train loss = 0.00775; val loss = 1.01214
+*** RUN 3 ***
+   *Test Loss=0.86754
+   *AUC=0.83697
+   *BAcc=0.80500
+#0: train loss = 1.16186; val loss = 0.98502
+#1: train loss = 0.65786; val loss = 0.82865
+#2: train loss = 0.36978; val loss = 0.86310
+#3: train loss = 0.12768; val loss = 0.92691
+#4: train loss = 0.04012; val loss = 1.00986
+#5: train loss = 0.01522; val loss = 1.04268
+#6: train loss = 0.01008; val loss = 1.05396
+*** RUN 4 ***
+   *Test Loss=0.85734
+   *AUC=0.82199
+   *BAcc=0.80333
+*** LR =  1e-05 ; WD =  0.0001 ; IMG_FTS =  4 ; TAB_FTS =  0  ***
+#0: train loss = 1.38818; val loss = 1.37813
+#1: train loss = 1.25281; val loss = 1.25932
+#2: train loss = 1.14872; val loss = 1.16886
+#3: train loss = 1.04982; val loss = 1.10098
+#4: train loss = 0.96276; val loss = 1.04507
+#5: train loss = 0.88995; val loss = 0.99937
+#6: train loss = 0.82257; val loss = 0.96639
+#7: train loss = 0.75872; val loss = 0.94365
+#8: train loss = 0.69432; val loss = 0.92244
+#9: train loss = 0.64354; val loss = 0.90703
+#10: train loss = 0.58955; val loss = 0.89117
+#11: train loss = 0.53295; val loss = 0.88371
+#12: train loss = 0.47178; val loss = 0.87732
+#13: train loss = 0.42075; val loss = 0.87192
+#14: train loss = 0.36198; val loss = 0.86828
+#15: train loss = 0.33466; val loss = 0.86800
+#16: train loss = 0.28545; val loss = 0.86984
+#17: train loss = 0.24136; val loss = 0.87054
+#18: train loss = 0.20252; val loss = 0.87298
+#19: train loss = 0.17358; val loss = 0.87336
+#20: train loss = 0.15343; val loss = 0.87791
+*** RUN 0 ***
+   *Test Loss=0.90843
+   *AUC=0.82912
+   *BAcc=0.78750
+#0: train loss = 1.36840; val loss = 1.37624
+#1: train loss = 1.24640; val loss = 1.27890
+#2: train loss = 1.14487; val loss = 1.20211
+#3: train loss = 1.04345; val loss = 1.13760
+#4: train loss = 0.95162; val loss = 1.08408
+#5: train loss = 0.86491; val loss = 1.04168
+#6: train loss = 0.79975; val loss = 1.00553
+#7: train loss = 0.72882; val loss = 0.98042
+#8: train loss = 0.66189; val loss = 0.96435
+#9: train loss = 0.60172; val loss = 0.95065
+#10: train loss = 0.53409; val loss = 0.94368
+#11: train loss = 0.47896; val loss = 0.93899
+#12: train loss = 0.41443; val loss = 0.93883
+#13: train loss = 0.35530; val loss = 0.93785
+#14: train loss = 0.30200; val loss = 0.94705
+#15: train loss = 0.25582; val loss = 0.94907
+#16: train loss = 0.22200; val loss = 0.96224
+#17: train loss = 0.19013; val loss = 0.96127
+#18: train loss = 0.16324; val loss = 0.97466
+*** RUN 1 ***
+   *Test Loss=0.89092
+   *AUC=0.84127
+   *BAcc=0.73167
+#0: train loss = 1.38603; val loss = 1.36610
+#1: train loss = 1.24374; val loss = 1.26135
+#2: train loss = 1.13387; val loss = 1.17053
+#3: train loss = 1.03186; val loss = 1.10217
+#4: train loss = 0.94571; val loss = 1.04445
+#5: train loss = 0.87624; val loss = 1.00136
+#6: train loss = 0.80288; val loss = 0.96593
+#7: train loss = 0.73933; val loss = 0.94144
+#8: train loss = 0.68403; val loss = 0.92155
+#9: train loss = 0.62721; val loss = 0.90819
+#10: train loss = 0.57281; val loss = 0.89006
+#11: train loss = 0.52452; val loss = 0.88680
+#12: train loss = 0.47274; val loss = 0.87552
+#13: train loss = 0.41223; val loss = 0.86935
+#14: train loss = 0.36149; val loss = 0.86796
+#15: train loss = 0.31087; val loss = 0.86461
+#16: train loss = 0.27014; val loss = 0.86534
+#17: train loss = 0.23693; val loss = 0.86266
+#18: train loss = 0.19826; val loss = 0.86590
+#19: train loss = 0.16421; val loss = 0.87131
+#20: train loss = 0.14023; val loss = 0.87455
+#21: train loss = 0.12464; val loss = 0.87910
+#22: train loss = 0.10165; val loss = 0.88447
+*** RUN 2 ***
+   *Test Loss=0.92328
+   *AUC=0.82704
+   *BAcc=0.78333
+#0: train loss = 1.37661; val loss = 1.36067
+#1: train loss = 1.24464; val loss = 1.25876
+#2: train loss = 1.13651; val loss = 1.17378
+#3: train loss = 1.03726; val loss = 1.10740
+#4: train loss = 0.95063; val loss = 1.04795
+#5: train loss = 0.87928; val loss = 1.00267
+#6: train loss = 0.80482; val loss = 0.96441
+#7: train loss = 0.74727; val loss = 0.93342
+#8: train loss = 0.68435; val loss = 0.91005
+#9: train loss = 0.62803; val loss = 0.89092
+#10: train loss = 0.56768; val loss = 0.87697
+#11: train loss = 0.50911; val loss = 0.86629
+#12: train loss = 0.45893; val loss = 0.86031
+#13: train loss = 0.41289; val loss = 0.85233
+#14: train loss = 0.35613; val loss = 0.84614
+#15: train loss = 0.30968; val loss = 0.84465
+#16: train loss = 0.26241; val loss = 0.84222
+#17: train loss = 0.24828; val loss = 0.84415
+#18: train loss = 0.20869; val loss = 0.84284
+#19: train loss = 0.17074; val loss = 0.84329
+#20: train loss = 0.14591; val loss = 0.84768
+#21: train loss = 0.12672; val loss = 0.85250
+*** RUN 3 ***
+   *Test Loss=0.89407
+   *AUC=0.82319
+   *BAcc=0.80333
+#0: train loss = 1.37799; val loss = 1.34771
+#1: train loss = 1.25493; val loss = 1.25842
+#2: train loss = 1.14847; val loss = 1.17114
+#3: train loss = 1.05576; val loss = 1.10222
+#4: train loss = 0.97453; val loss = 1.04753
+#5: train loss = 0.89280; val loss = 0.99601
+#6: train loss = 0.84598; val loss = 0.95727
+#7: train loss = 0.77820; val loss = 0.92757
+#8: train loss = 0.71807; val loss = 0.90624
+#9: train loss = 0.65967; val loss = 0.89167
+#10: train loss = 0.60168; val loss = 0.88168
+#11: train loss = 0.55030; val loss = 0.87470
+#12: train loss = 0.49871; val loss = 0.86734
+#13: train loss = 0.44228; val loss = 0.86534
+#14: train loss = 0.39244; val loss = 0.87260
+#15: train loss = 0.33132; val loss = 0.87342
+#16: train loss = 0.28189; val loss = 0.88283
+#17: train loss = 0.24171; val loss = 0.88917
+#18: train loss = 0.20336; val loss = 0.89380
+*** RUN 4 ***
+   *Test Loss=0.89643
+   *AUC=0.82736
+   *BAcc=0.78833
+*** LR =  0.001 ; WD =  0 ; IMG_FTS =  4 ; TAB_FTS =  0  ***
+#0: train loss = 0.99803; val loss = 2.83370
+#1: train loss = 0.80617; val loss = 0.87312
+#2: train loss = 0.75112; val loss = 0.80113
+#3: train loss = 0.70821; val loss = 1.07786
+#4: train loss = 0.67802; val loss = 0.99081
+#5: train loss = 0.57418; val loss = 1.43943
+#6: train loss = 0.45968; val loss = 1.90897
+#7: train loss = 0.34853; val loss = 2.02417
+*** RUN 0 ***
+   *Test Loss=0.88089
+   *AUC=0.82331
+   *BAcc=0.79333
+#0: train loss = 1.02742; val loss = 1.70297
+#1: train loss = 0.76149; val loss = 1.03846
+#2: train loss = 0.74202; val loss = 1.04288
+#3: train loss = 0.66025; val loss = 0.86798
+#4: train loss = 0.50063; val loss = 1.28102
+#5: train loss = 0.36678; val loss = 2.54630
+#6: train loss = 0.30596; val loss = 1.75445
+#7: train loss = 0.22350; val loss = 1.11349
+#8: train loss = 0.22074; val loss = 1.21137
+*** RUN 1 ***
+   *Test Loss=0.91627
+   *AUC=0.82805
+   *BAcc=0.79167
+#0: train loss = 0.94221; val loss = 0.98988
+#1: train loss = 0.76838; val loss = 0.98117
+#2: train loss = 0.73235; val loss = 1.33139
+#3: train loss = 0.65961; val loss = 1.76765
+#4: train loss = 0.50892; val loss = 2.27107
+#5: train loss = 0.37342; val loss = 1.19060
+#6: train loss = 0.31480; val loss = 2.94466
+*** RUN 2 ***
+   *Test Loss=0.92761
+   *AUC=0.81806
+   *BAcc=0.79000
+#0: train loss = 1.00061; val loss = 4.14571
+#1: train loss = 0.81110; val loss = 0.90220
+#2: train loss = 0.72984; val loss = 0.80334
+#3: train loss = 0.71208; val loss = 0.79902
+#4: train loss = 0.61597; val loss = 2.19934
+#5: train loss = 0.60052; val loss = 1.19625
+#6: train loss = 0.46968; val loss = 1.61906
+#7: train loss = 0.34830; val loss = 2.76877
+#8: train loss = 0.25359; val loss = 1.70328
+*** RUN 3 ***
+   *Test Loss=0.86617
+   *AUC=0.83115
+   *BAcc=0.79250
+#0: train loss = 0.99008; val loss = 1.03790
+#1: train loss = 0.78813; val loss = 1.04361
+#2: train loss = 0.75748; val loss = 0.86168
+#3: train loss = 0.74166; val loss = 0.80002
+#4: train loss = 0.70130; val loss = 0.99797
+#5: train loss = 0.66591; val loss = 1.45270
+#6: train loss = 0.49124; val loss = 1.35407
+#7: train loss = 0.37190; val loss = 1.79234
+#8: train loss = 0.34483; val loss = 1.35407
+*** RUN 4 ***
+   *Test Loss=0.88518
+   *AUC=0.82700
+   *BAcc=0.79333
+*** LR =  0.0001 ; WD =  0 ; IMG_FTS =  4 ; TAB_FTS =  0  ***
+#0: train loss = 1.14292; val loss = 0.93989
+#1: train loss = 0.70202; val loss = 0.81899
+#2: train loss = 0.38664; val loss = 0.85990
+#3: train loss = 0.12200; val loss = 0.99690
+#4: train loss = 0.03454; val loss = 1.01639
+#5: train loss = 0.01970; val loss = 1.07393
+#6: train loss = 0.01066; val loss = 1.08314
+*** RUN 0 ***
+   *Test Loss=0.85369
+   *AUC=0.83003
+   *BAcc=0.80583
+#0: train loss = 1.11565; val loss = 0.97786
+#1: train loss = 0.66566; val loss = 0.89504
+#2: train loss = 0.32449; val loss = 1.01296
+#3: train loss = 0.09295; val loss = 1.17646
+#4: train loss = 0.03098; val loss = 1.22418
+#5: train loss = 0.01979; val loss = 1.27463
+#6: train loss = 0.00792; val loss = 1.28699
+*** RUN 1 ***
+   *Test Loss=0.82680
+   *AUC=0.83830
+   *BAcc=0.81083
+#0: train loss = 1.13043; val loss = 0.95487
+#1: train loss = 0.66939; val loss = 0.86554
+#2: train loss = 0.35516; val loss = 0.92141
+#3: train loss = 0.12483; val loss = 1.00423
+#4: train loss = 0.03105; val loss = 1.03311
+#5: train loss = 0.01575; val loss = 1.12171
+#6: train loss = 0.01000; val loss = 1.11808
+*** RUN 2 ***
+   *Test Loss=0.85230
+   *AUC=0.82468
+   *BAcc=0.80667
+#0: train loss = 1.13412; val loss = 0.99372
+#1: train loss = 0.69705; val loss = 0.81705
+#2: train loss = 0.39341; val loss = 0.81745
+#3: train loss = 0.11435; val loss = 0.87366
+#4: train loss = 0.02953; val loss = 0.95789
+#5: train loss = 0.01483; val loss = 0.97408
+#6: train loss = 0.01206; val loss = 1.03285
+*** RUN 3 ***
+   *Test Loss=0.83532
+   *AUC=0.83276
+   *BAcc=0.82083
+#0: train loss = 1.14307; val loss = 0.94391
+#1: train loss = 0.67811; val loss = 0.81310
+#2: train loss = 0.36070; val loss = 0.91311
+#3: train loss = 0.12948; val loss = 1.03818
+#4: train loss = 0.03798; val loss = 1.06909
+#5: train loss = 0.02153; val loss = 1.14058
+#6: train loss = 0.01148; val loss = 1.14908
+*** RUN 4 ***
+   *Test Loss=0.84006
+   *AUC=0.82871
+   *BAcc=0.80083
+*** LR =  1e-05 ; WD =  0 ; IMG_FTS =  4 ; TAB_FTS =  0  ***
+#0: train loss = 1.38818; val loss = 1.37810
+#1: train loss = 1.25286; val loss = 1.25933
+#2: train loss = 1.14875; val loss = 1.16892
+#3: train loss = 1.04989; val loss = 1.10098
+#4: train loss = 0.96273; val loss = 1.04505
+#5: train loss = 0.88992; val loss = 0.99923
+#6: train loss = 0.82253; val loss = 0.96653
+#7: train loss = 0.75866; val loss = 0.94372
+#8: train loss = 0.69428; val loss = 0.92250
+#9: train loss = 0.64351; val loss = 0.90709
+#10: train loss = 0.58950; val loss = 0.89099
+#11: train loss = 0.53289; val loss = 0.88366
+#12: train loss = 0.47175; val loss = 0.87750
+#13: train loss = 0.42069; val loss = 0.87177
+#14: train loss = 0.36197; val loss = 0.86803
+#15: train loss = 0.33465; val loss = 0.86761
+#16: train loss = 0.28544; val loss = 0.86958
+#17: train loss = 0.24125; val loss = 0.87034
+#18: train loss = 0.20243; val loss = 0.87229
+#19: train loss = 0.17363; val loss = 0.87281
+#20: train loss = 0.15363; val loss = 0.87809
+*** RUN 0 ***
+   *Test Loss=0.90828
+   *AUC=0.82915
+   *BAcc=0.78750
+#0: train loss = 1.36838; val loss = 1.37626
+#1: train loss = 1.24642; val loss = 1.27887
+#2: train loss = 1.14492; val loss = 1.20204
+#3: train loss = 1.04348; val loss = 1.13758
+#4: train loss = 0.95167; val loss = 1.08405
+#5: train loss = 0.86486; val loss = 1.04172
+#6: train loss = 0.79978; val loss = 1.00552
+#7: train loss = 0.72875; val loss = 0.98027
+#8: train loss = 0.66181; val loss = 0.96420
+#9: train loss = 0.60165; val loss = 0.95072
+#10: train loss = 0.53404; val loss = 0.94382
+#11: train loss = 0.47896; val loss = 0.93937
+#12: train loss = 0.41428; val loss = 0.93900
+#13: train loss = 0.35519; val loss = 0.93820
+#14: train loss = 0.30184; val loss = 0.94765
+#15: train loss = 0.25578; val loss = 0.94904
+#16: train loss = 0.22198; val loss = 0.96205
+#17: train loss = 0.19012; val loss = 0.96119
+#18: train loss = 0.16322; val loss = 0.97537
+*** RUN 1 ***
+   *Test Loss=0.89163
+   *AUC=0.84115
+   *BAcc=0.73000
+#0: train loss = 1.38605; val loss = 1.36606
+#1: train loss = 1.24371; val loss = 1.26149
+#2: train loss = 1.13381; val loss = 1.17066
+#3: train loss = 1.03182; val loss = 1.10225
+#4: train loss = 0.94568; val loss = 1.04483
+#5: train loss = 0.87613; val loss = 1.00148
+#6: train loss = 0.80276; val loss = 0.96593
+#7: train loss = 0.73912; val loss = 0.94157
+#8: train loss = 0.68400; val loss = 0.92167
+#9: train loss = 0.62717; val loss = 0.90812
+#10: train loss = 0.57273; val loss = 0.89013
+#11: train loss = 0.52439; val loss = 0.88673
+#12: train loss = 0.47273; val loss = 0.87542
+#13: train loss = 0.41233; val loss = 0.86940
+#14: train loss = 0.36141; val loss = 0.86764
+#15: train loss = 0.31079; val loss = 0.86450
+#16: train loss = 0.26999; val loss = 0.86532
+#17: train loss = 0.23675; val loss = 0.86309
+#18: train loss = 0.19812; val loss = 0.86552
+#19: train loss = 0.16393; val loss = 0.87141
+#20: train loss = 0.13995; val loss = 0.87397
+#21: train loss = 0.12442; val loss = 0.87892
+#22: train loss = 0.10147; val loss = 0.88428
+*** RUN 2 ***
+   *Test Loss=0.92368
+   *AUC=0.82694
+   *BAcc=0.78083
+#0: train loss = 1.37665; val loss = 1.36081
+#1: train loss = 1.24464; val loss = 1.25879
+#2: train loss = 1.13648; val loss = 1.17384
+#3: train loss = 1.03722; val loss = 1.10752
+#4: train loss = 0.95059; val loss = 1.04796
+#5: train loss = 0.87917; val loss = 1.00269
+#6: train loss = 0.80473; val loss = 0.96442
+#7: train loss = 0.74716; val loss = 0.93344
+#8: train loss = 0.68441; val loss = 0.91013
+#9: train loss = 0.62804; val loss = 0.89107
+#10: train loss = 0.56764; val loss = 0.87698
+#11: train loss = 0.50911; val loss = 0.86621
+#12: train loss = 0.45894; val loss = 0.86009
+#13: train loss = 0.41294; val loss = 0.85200
+#14: train loss = 0.35621; val loss = 0.84566
+#15: train loss = 0.30960; val loss = 0.84436
+#16: train loss = 0.26235; val loss = 0.84177
+#17: train loss = 0.24828; val loss = 0.84392
+#18: train loss = 0.20851; val loss = 0.84278
+#19: train loss = 0.17053; val loss = 0.84333
+#20: train loss = 0.14568; val loss = 0.84774
+#21: train loss = 0.12645; val loss = 0.85275
+*** RUN 3 ***
+   *Test Loss=0.89402
+   *AUC=0.82297
+   *BAcc=0.80333
+#0: train loss = 1.37799; val loss = 1.34770
+#1: train loss = 1.25499; val loss = 1.25847
+#2: train loss = 1.14851; val loss = 1.17121
+#3: train loss = 1.05573; val loss = 1.10256
+#4: train loss = 0.97451; val loss = 1.04759
+#5: train loss = 0.89265; val loss = 0.99598
+#6: train loss = 0.84590; val loss = 0.95699
+#7: train loss = 0.77808; val loss = 0.92770
+#8: train loss = 0.71779; val loss = 0.90642
+#9: train loss = 0.65939; val loss = 0.89183
+#10: train loss = 0.60140; val loss = 0.88167
+#11: train loss = 0.55012; val loss = 0.87465
+#12: train loss = 0.49851; val loss = 0.86737
+#13: train loss = 0.44209; val loss = 0.86556
+#14: train loss = 0.39225; val loss = 0.87319
+#15: train loss = 0.33129; val loss = 0.87406
+#16: train loss = 0.28184; val loss = 0.88306
+#17: train loss = 0.24177; val loss = 0.88915
+#18: train loss = 0.20346; val loss = 0.89396
+*** RUN 4 ***
+   *Test Loss=0.89676
+   *AUC=0.82725
+   *BAcc=0.78750
+************************** RESULTS **************************
+
+BEST PARAMETERS: 
+  -> LR: 0.001
+  -> WD: 0.0001
+  -> Z_img: 4.0
+  -> Z_tab: 0.0
+AVERAGE METRICS ACROSS FOLDS:
+  -> BCELoss: 0.82648
+  -> AUROC: 0.82748
+  -> BAcc: 0.81300
+BEST FOLD: 0
+
+
+
+************************** 5 folds from best Hyper Parameters **************************
+
+Model no.  0
+* BCELoss:  0.7983187742531299
+* AUROC:  0.8265750000000001
+* BAcc:  0.8125
+
+Model no.  1
+* BCELoss:  0.8201012240350246
+* AUROC:  0.8244666666666667
+* BAcc:  0.8108333333333333
+
+Model no.  2
+* BCELoss:  0.8549421325325965
+* AUROC:  0.8320833333333334
+* BAcc:  0.8216666666666667
+
+Model no.  3
+* BCELoss:  0.8298568454384804
+* AUROC:  0.8278333333333333
+* BAcc:  0.8091666666666666
+
+Model no.  4
+* BCELoss:  0.8291725042462349
+* AUROC:  0.826425
+* BAcc:  0.8108333333333333
+
+
+JOB STATISTICS
+==============
+Job ID: 8003988
+Cluster: snellius
+User/Group: mmalafaia/mmalafaia
+State: RUNNING
+Nodes: 1
+Cores per node: 18
+CPU Utilized: 00:00:00
+CPU Efficiency: 0.00% of 04:53:42 core-walltime
+Job Wall-clock time: 00:16:19
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 120.00 GB (120.00 GB/node)
+WARNING: Efficiency statistics may be misleading for RUNNING jobs.
