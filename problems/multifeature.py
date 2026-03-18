@@ -1,5 +1,5 @@
 # OR(AND(circle,A), AND(!triangle, B))
-def get_y(labels):
+def get_y(labels, INPUT):
     y = []
     circle = labels['circle']
     a = labels['Feature1']
@@ -7,17 +7,31 @@ def get_y(labels):
     triangle = labels['triangle']
     c = labels['Feature3']
     d = labels['Feature4']
-    for i in range(labels.shape[0]):
-        if circle[i] == 1:
-            if a[i] > b[i]: y1 = 1
+
+    if INPUT == 'img_c':
+        y = circle
+    elif INPUT == 'img_t':
+        y = triangle
+    elif INPUT == 'tab_a':
+        for i in range(labels.shape[0]):
+            if a[i] > b[i]: y.append(1)
+            else: y.append(0)
+    elif INPUT == 'tab_b':
+        for i in range(labels.shape[0]):
+            if c[i] > d[i]: y.append(1)
+            else: y.append(0)
+    else:
+        for i in range(labels.shape[0]):
+            if circle[i] == 1:
+                if a[i] > b[i]: y1 = 1
+                else: y1 = 0
             else: y1 = 0
-        else: y1 = 0
-        if triangle[i] == 0: #!triangle
-            if c[i] > d[i]: y2 = 1
+            if triangle[i] == 0: #!triangle
+                if c[i] > d[i]: y2 = 1
+                else: y2 = 0
             else: y2 = 0
-        else: y2 = 0
-        if (y1 + y2) > 0: y.append(1)
-        else: y.append(0)
+            if (y1 + y2) > 0: y.append(1)
+            else: y.append(0)
     return y 
 
 # binary problem
@@ -26,15 +40,16 @@ OUT_SIZE = 1
 
 # Define input
 global INPUT
-INPUT = 'fusion' # Choose from 'img', 'tab', 'fusion'
+INPUT = 'fusion' # Choose from 'img', 'tab', 'fusion' OR 'img_c'/'img_t' OR 'tab_a'/'tab_b'
 
 # Define the training mode: 'end' for end-to-end, 'seq' for sequential, or 'hyb' for hybrid
 global TRAINING
-TRAINING = 'hyb'  # Choose from 'end', 'seq', or 'hyb'
+TRAINING = 'ft_part'  # Choose from 'end', 'seq', or 'hyb'
+                  # OR 'ft_comp', 'ft_part', 'ft_none' for complete, partial and none freezing
 
 # Define which weights to load for hybrid and sequential training
 global WTS
-WTS = 'ae' # Choose from 'ae' or 'single'
+WTS = 'single' # Choose from 'ae' or 'single'
 
 # Define whethe to temporarily freeze img block (only for TRAINING = 'seq' and WTS = 'ae')
 global TEMP_FREEZE

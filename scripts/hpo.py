@@ -19,15 +19,17 @@ tab.drop(columns=['A', 'B', 'C', 'id', 'Feature14', 'Feature13', 'Feature12', 'F
 # Combine the tabular data and labels into a single DataFrame for training
 data = pd.concat([tab, labels], axis=1)
 # Apply a transformation to create a new target column 'y'
-data['y'] = get_y(data)
+
+data['y'] = get_y(data, INPUT)
+
 
 # Define hyperparameters for grid search during hyperparameter optimization (HPO)
 n_runs = 5  # Number of runs for each set of hyperparameters
 lrs = [1e-3, 1e-4, 1e-5]  # List of learning rates to test
 wds = [1e-3, 1e-4, 0]     # List of weight decay values to test
 if INPUT == 'fusion':
-    z_img = [0, 1, 2, 3] # List of img_fts to test
-    z_tab = [0, 1, 2, 3] # List of tab_fts to test
+    z_img = [2] #[0, 1, 2, 3] # List of img_fts to test
+    z_tab = [2] #[0, 1, 2, 3] # List of tab_fts to test
 elif INPUT == 'img':
     if OUT_SIZE == 0: # in case of regression task
         z_img = [1] # Output node for single modality
@@ -40,6 +42,12 @@ elif INPUT == 'tab':
         z_tab = [1] # Otput node for single modality
     else: 
         z_tab = [OUT_SIZE] # Otput node for single modality
+elif INPUT in ['img_t', 'img_c']:
+    z_img = [OUT_SIZE]
+    z_tab = [0]
+elif INPUT in ['tab_a', 'tab_b']:
+    z_tab = [OUT_SIZE]
+    z_img = [0]
 
 # Initialize a DataFrame to store results from each test run
 test_results = pd.DataFrame(columns=['LR', 'WD', 'Z_img', 'Z_tab', 'Fold', 'Loss', 'AUROC', 'BAcc', 'model'])
@@ -58,7 +66,7 @@ for TAB_FTS, IMG_FTS, WD, LR  in itertools.product(z_tab, z_img, wds, lrs):
 
 ## Log all relevant Results
 # Group results by learning rate and weight decay to calculate the mean values across folds
-grouped_results = test_results.groupby(['LR', 'WD', 'Z_img', 'Z_tab'])['Loss','AUROC','BAcc'].mean().reset_index()
+grouped_results = test_results.groupby(['LR', 'WD', 'Z_img', 'Z_tab'])[['Loss','AUROC','BAcc']].mean().reset_index()
 
 # Identify the hyperparameter combination that resulted in the lowest loss
 best_params = grouped_results.loc[grouped_results['Loss'].idxmin()]

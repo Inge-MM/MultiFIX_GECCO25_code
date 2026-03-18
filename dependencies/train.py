@@ -149,7 +149,7 @@ def train_model(train_dataloader, val_dataloader, loss_fn, lr, wd, model):
     
     # Training loop
     for epoch in range(MAX_EPOCHS):
-        if INPUT == 'fusion' and model.img_block is not None:
+        if INPUT == 'fusion':# and model.img_block is not None:
             if TEMP_FREEZE and epoch == 15:
                 print("Defreezing the img block after 20 epochs!")
                 for param in model.img_block.resnet.parameters():
@@ -187,7 +187,55 @@ def initialise_model(fold, nas, XAI=False):
         results: initialised model with right configuration
     """
     if INPUT == 'img': model = single_img_net(OUT_SIZE)
-    elif INPUT == 'tab': model = single_tab_net(OUT_SIZE)
+
+    elif INPUT in ['img_t', 'img_c']: model = single_img_net(OUT_SIZE)
+    
+    elif INPUT in ['tab_a', 'tab_b']: model = single_tab_net(OUT_SIZE)
+
+    elif INPUT == 'tab': single_tab_net(OUT_SIZE)
+
+    #TODO if input == A etc
+    # if model.circle_weights != none load weights
+    
+    elif INPUT == 'fusion' and TRAINING in ['ft_comp', 'ft_part']: # ft = fusion test
+        model = multifix_net_test(nas, OUT_SIZE)
+        # img
+        if model.img_c_block is not None:
+            img_c_wts = torch.load(MODEL_DIR + 'img_c' + str(fold) + '.pth', map_location=DEVICE)
+            #resnet_c_wts = {k: v for k, v in img_c_wts.items() if not k.startswith('classifier')}
+            model.img_c_block.load_state_dict(img_c_wts, strict=False)
+        # tab
+        if model.tab_a_block is not None:
+            tab_a_wts = torch.load(MODEL_DIR + 'tab_a' + str(fold) + '.pth', map_location=DEVICE)
+            #fts_a_wts = {k.replace('fts.', '', 1): v for k, v in tab_a_wts.items() if not k.startswith('classifier')}
+            model.tab_a_block.load_state_dict(tab_a_wts)#, strict=False)
+        
+        # img
+        if model.img_t_block is not None:
+            img_t_wts = torch.load(MODEL_DIR + 'img_t' + str(fold) + '.pth', map_location=DEVICE)
+            #resnet_t_wts = {k: v for k, v in img_t_wts.items() if not k.startswith('classifier')}
+            model.img_t_block.load_state_dict(img_t_wts, strict=False)
+        # tab
+        if model.tab_b_block is not None:
+            tab_b_wts = torch.load(MODEL_DIR + 'tab_b' + str(fold) + '.pth', map_location=DEVICE)
+            #fts_b_wts = {k.replace('fts.', '', 1): v for k, v in tab_b_wts.items() if not k.startswith('classifier')}
+            model.tab_b_block.load_state_dict(tab_b_wts)#, strict=False)
+
+        # freezing params
+        for block in [model.img_c_block, model.img_t_block]:
+            for param in block.parameters():
+                param.requires_grad = False
+
+        if TRAINING == 'ft_comp':
+            # freezing params
+            for block in [model.img_t_block, model.img_c_block]:
+                for param in block.parameters():
+                    param.requires_grad = False
+
+
+    elif TRAINING == 'ft_none':
+        model = multifix_net_test(nas, OUT_SIZE)
+
     else: # fusion
         model = multifix_net(nas, OUT_SIZE)
         if not XAI:

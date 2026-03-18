@@ -2,11 +2,11 @@
 def get_y(labels):
     y = []
     circle = labels['circle']
-    a = labels['Feature1']
-    b = labels['Feature2']
+    a = labels['Feature2']
+    b = labels['Feature6']
     for i in range(labels.shape[0]):
         if circle[i] == 1:
-            if a[i] > b[i]: y.append(1)
+            if a[i] < b[i]: y.append(1)
             else: y.append(0)
         else: y.append(0)
     return y
@@ -19,13 +19,12 @@ OUT_SIZE = 1 # do not change
 
 # Define input
 global INPUT
-INPUT = 'img' # Choose from 'img', 'tab', 'fusion'
+INPUT = 'img' # Choose from 'img', 'tab', 'fusion' #TODO use as argument
 
 
 # Define the training mode: 'end' for end-to-end, 'seq' for sequential, or 'hyb' for hybrid
 global TRAINING
-TRAINING = 'end'  # Choose from 'end', 'seq', or 'hyb'
-
+TRAINING = 'mid-train'  # Choose from 'end', uhijuiijuij
 # Define which weights to load for hybrid and sequential training
 global WTS
 WTS = 'single' # Choose from 'ae' for autoencoder wts or 'single' for single modality wts
@@ -38,7 +37,7 @@ TEMP_FREEZE = False
         
 # Initialise directory to save models to
 global MODEL_DIR
-MODEL_DIR = './models/AND(circle,A)/'
+MODEL_DIR = f'./models/{INPUT}/'
 
 global AE_DIR
 AE_DIR = './models/img_encoders/'

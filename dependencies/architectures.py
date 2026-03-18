@@ -59,6 +59,58 @@ class tab_net(nn.Module):
         return x
 
 # Define the fusion network to combine both image and tabular data features
+### NEW! Seperate img and tab blocks
+class fusion_net_test(nn.Module):
+    def __init__(self, img_fts, tab_fts, out_size=1):
+        super().__init__()
+        
+        # Inititating with 4 feature engineering blocks
+        self.z_img_c = 1  #NEW!
+        self.z_img_t = 1  #NEW!
+        self.z_tab_a = 1  #NEW!
+        self.z_tab_b = 1  #NEW!
+
+        fts_nr = self.z_img_c + self.z_img_t + self.z_tab_a + self.z_tab_b
+        
+        w = 128  # Intermediate layer size
+        d = 0.125  # Dropout rate
+
+        # Fusion layers to combine image and tabular features
+        self.fusion = nn.Sequential(
+            nn.Linear(fts_nr, w),  # Input is the concatenation of image and tabular features
+            nn.BatchNorm1d(w),     # Batch normalization
+            nn.ReLU(),
+            nn.Dropout(d),         # Dropout for regularization
+            nn.Linear(w, w),       # Second fusion layer
+            nn.BatchNorm1d(w),
+            nn.ReLU(),
+            nn.Linear(w, 128),     # 128 latent representation
+            nn.ReLU())
+        
+        # Classifier to produce the final output (binary classification)
+        if out_size == 1: # binary classification
+            self.classifier = nn.Sequential(
+                nn.Linear(128, 1),  # Output a single value for binary classification
+                nn.Sigmoid())  # Sigmoid to output a probability (0 to 1)
+        elif out_size > 1: # multiclass
+            self.classifier = nn.Linear(128,out_size)
+        else: # regression
+            self.classifier = nn.Linear(128,1)
+        
+    # Forward pass through the fusion network
+    def forward(self, a, b):
+        #if self.z_img != 0:
+            #if self.z_tab != 0:
+            #    x = torch.cat((a, b), dim=1)  # Concatenate image and tabular features along feature axis
+            #else: x = a
+
+        x = torch.cat((a, b), dim=1)
+        x = self.fusion(x)  # Pass through fusion layers
+        x = self.classifier(x)  # Final classification layer
+        return x
+
+# Define the fusion network to combine both image and tabular data features
+### Classic
 class fusion_net(nn.Module):
     def __init__(self, img_fts, tab_fts, out_size=1):
         super().__init__()
@@ -103,6 +155,43 @@ class fusion_net(nn.Module):
         return x
 
 # Define the main multifix network that integrates image, tabular, and fusion networks
+### NEW!
+class multifix_net_test(nn.Module):
+    def __init__(self, nas_config, output_size):
+        super().__init__()
+
+        """ Image Processing Network """
+        self.img_fts = 2                # for this experiment, it'll always be 2
+        self.img_c_block = img_net(1)   # NEW!
+        self.img_t_block = img_net(1)   # NEW!
+
+        """ Tabular Data Processing Network """
+        self.tab_fts = 2                # for this experiment, it'll always be 2
+        self.tab_a_block = tab_net(1)   # NEW!
+        self.tab_b_block = tab_net(1)   # NEW!
+        
+        """ Fusion Network """
+        # Combine image and tabular features in the fusion network   
+        self.fusion_block = fusion_net_test(self.img_fts, self.tab_fts, output_size)
+
+    # Forward pass through the entire multifix network
+    def forward(self, img, tab):
+
+        img_c = self.img_c_block(img, tab)  # NEW!
+        img_t = self.img_t_block(img, tab)  # NEW!
+        img = torch.cat((img_c, img_t), dim = 1)
+
+        tab_a = self.tab_a_block(img, tab)  # NEW!
+        tab_b = self.tab_b_block(img, tab)  # NEW!
+        tab = torch.cat((tab_a, tab_b), dim = 1)
+        # Combine image and tabular features and pass through fusion network
+        x = self.fusion_block(img, tab)
+
+        return x
+
+
+# Define the main multifix network that integrates image, tabular, and fusion networks
+### Classic
 class multifix_net(nn.Module):
     def __init__(self, nas_config, output_size):
         super().__init__()
@@ -251,7 +340,7 @@ class single_tab_net(nn.Module):
 
         # Feature extractor for tabular data
         self.fts = nn.Sequential(
-            nn.Linear(7, w),  # Initial input size is 15 (features in tabular data)
+            nn.Linear(10, w),  # Initial input size is 15 (features in tabular data)# TODO was set to 7 for some reason
             nn.BatchNorm1d(w), # Batch normalization for stable training
             nn.ReLU(),         # ReLU activation
             nn.Dropout(d),     # Dropout to prevent overfitting

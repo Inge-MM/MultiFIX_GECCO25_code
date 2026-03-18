@@ -15,7 +15,7 @@ global REPO_DIR
 REPO_DIR = '.'
 
 global DATA_DIR
-DATA_DIR = 'ADD DATA DIR HERE'
+DATA_DIR = '/export/scratch2/ima/data/'
 
 global DEVICE
 DEVICE = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
@@ -35,4 +35,4 @@ PATIENCE = 5
 # multiclass
 # multifeature
 # xor
-from and_ import *
+from multifeature import *
