@@ -1,6 +1,8 @@
-nohup: ignoring input
-Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part ; INPUT =  fusion ; OUT_SIZE =  1 ; WTS =  single ; TEMP_FREEZE =  False
+Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part_part ; INPUT =  fusion ; OUT_SIZE =  1 ; WTS =  single ; TEMP_FREEZE =  False
 *** LR =  0.001 ; WD =  0.001 ; IMG_FTS =  2 ; TAB_FTS =  2  ***
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.52610; val loss = 0.49257
 #1: train loss = 0.41315; val loss = 0.39251
 #2: train loss = 0.29461; val loss = 0.34381
@@ -20,12 +22,15 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
 #16: train loss = 0.16783; val loss = 0.66223
 #17: train loss = 0.09824; val loss = 0.80852
 #18: train loss = 0.14861; val loss = 0.28196
-/export/scratch2/ima/MultiFIX_GECCO25_code/./dependencies/train.py:308: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+/export/scratch2/ima/MultiFIX_GECCO25_code/dependencies/train.py:323: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
   results = pd.concat([results, new_row], ignore_index=True)
 *** RUN 0 ***
    *Test Loss=0.26006
    *AUC=0.96155
    *BAcc=0.91924
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.51764; val loss = 0.54374
 #1: train loss = 0.34488; val loss = 0.68621
 #2: train loss = 0.27471; val loss = 0.68587
@@ -46,6 +51,9 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
    *Test Loss=0.24592
    *AUC=0.96672
    *BAcc=0.90422
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.51248; val loss = 0.54000
 #1: train loss = 0.40626; val loss = 0.40376
 #2: train loss = 0.34133; val loss = 0.61440
@@ -60,6 +68,9 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
    *Test Loss=0.24389
    *AUC=0.96672
    *BAcc=0.90909
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.54893; val loss = 0.52055
 #1: train loss = 0.44974; val loss = 0.49393
 #2: train loss = 0.34485; val loss = 0.36884
@@ -79,6 +90,9 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
    *Test Loss=0.21382
    *AUC=0.97900
    *BAcc=0.90016
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.53806; val loss = 0.53554
 #1: train loss = 0.39631; val loss = 0.37675
 #2: train loss = 0.33952; val loss = 0.28960
@@ -92,6 +106,9 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
    *AUC=0.97480
    *BAcc=0.94149
 *** LR =  0.0001 ; WD =  0.001 ; IMG_FTS =  2 ; TAB_FTS =  2  ***
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.64369; val loss = 0.65998
 #1: train loss = 0.57830; val loss = 0.54252
 #2: train loss = 0.52017; val loss = 0.47450
@@ -106,6 +123,9 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
    *Test Loss=0.45661
    *AUC=0.86313
    *BAcc=0.78084
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.65108; val loss = 0.65829
 #1: train loss = 0.57425; val loss = 0.57735
 #2: train loss = 0.50425; val loss = 0.51816
@@ -120,6 +140,9 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
    *Test Loss=0.41217
    *AUC=0.90503
    *BAcc=0.80682
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.65812; val loss = 0.67128
 #1: train loss = 0.58130; val loss = 0.57338
 #2: train loss = 0.51714; val loss = 0.49879
@@ -135,6 +158,9 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
    *Test Loss=0.39780
    *AUC=0.91487
    *BAcc=0.82021
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.66423; val loss = 0.66846
 #1: train loss = 0.60395; val loss = 0.58447
 #2: train loss = 0.55163; val loss = 0.51765
@@ -150,6 +176,9 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
    *Test Loss=0.39627
    *AUC=0.93588
    *BAcc=0.82305
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.65202; val loss = 0.66360
 #1: train loss = 0.58185; val loss = 0.56826
 #2: train loss = 0.51124; val loss = 0.50182
@@ -168,6 +197,9 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
    *AUC=0.84887
    *BAcc=0.77725
 *** LR =  1e-05 ; WD =  0.001 ; IMG_FTS =  2 ; TAB_FTS =  2  ***
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.68231; val loss = 0.69263
 #1: train loss = 0.67548; val loss = 0.66978
 #2: train loss = 0.66389; val loss = 0.65058
@@ -219,6 +251,9 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
    *Test Loss=0.47267
    *AUC=0.83797
    *BAcc=0.78125
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.69784; val loss = 0.70074
 #1: train loss = 0.68458; val loss = 0.69153
 #2: train loss = 0.67130; val loss = 0.67891
@@ -281,6 +316,9 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
    *Test Loss=0.46889
    *AUC=0.86658
    *BAcc=0.77881
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.70775; val loss = 0.69919
 #1: train loss = 0.69449; val loss = 0.69407
 #2: train loss = 0.68195; val loss = 0.67991
@@ -352,6 +390,9 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
    *Test Loss=0.43783
    *AUC=0.89032
    *BAcc=0.80641
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.67433; val loss = 0.69612
 #1: train loss = 0.66866; val loss = 0.67353
 #2: train loss = 0.65717; val loss = 0.65895
@@ -396,6 +437,9 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
    *Test Loss=0.43173
    *AUC=0.92766
    *BAcc=0.84984
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.67110; val loss = 0.67890
 #1: train loss = 0.66785; val loss = 0.67227
 #2: train loss = 0.65539; val loss = 0.66176
@@ -454,6 +498,9 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
    *AUC=0.88987
    *BAcc=0.78626
 *** LR =  0.001 ; WD =  0.0001 ; IMG_FTS =  2 ; TAB_FTS =  2  ***
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.51315; val loss = 0.45694
 #1: train loss = 0.41552; val loss = 0.35787
 #2: train loss = 0.30463; val loss = 0.31387
@@ -468,6 +515,9 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
    *Test Loss=0.26950
    *AUC=0.96865
    *BAcc=0.89773
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.53307; val loss = 0.54223
 #1: train loss = 0.43684; val loss = 0.42641
 #2: train loss = 0.37461; val loss = 0.36696
@@ -488,6 +538,9 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
    *Test Loss=0.37525
    *AUC=0.92137
    *BAcc=0.82102
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.53709; val loss = 0.51712
 #1: train loss = 0.44402; val loss = 0.43906
 #2: train loss = 0.40821; val loss = 0.58673
@@ -502,6 +555,9 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
    *Test Loss=0.40005
    *AUC=0.90777
    *BAcc=0.79748
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.51883; val loss = 0.48600
 #1: train loss = 0.36382; val loss = 0.48701
 #2: train loss = 0.33071; val loss = 0.30692
@@ -524,6 +580,9 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
    *Test Loss=0.22797
    *AUC=0.96905
    *BAcc=0.91315
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.48545; val loss = 0.45216
 #1: train loss = 0.41038; val loss = 0.38992
 #2: train loss = 0.35269; val loss = 0.41456
@@ -541,6 +600,9 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
    *AUC=0.98593
    *BAcc=0.94711
 *** LR =  0.0001 ; WD =  0.0001 ; IMG_FTS =  2 ; TAB_FTS =  2  ***
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.64353; val loss = 0.65998
 #1: train loss = 0.57883; val loss = 0.54341
 #2: train loss = 0.52021; val loss = 0.47761
@@ -554,6 +616,9 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
    *Test Loss=0.45951
    *AUC=0.89134
    *BAcc=0.79302
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.65410; val loss = 0.67118
 #1: train loss = 0.58227; val loss = 0.59387
 #2: train loss = 0.51711; val loss = 0.52768
@@ -569,6 +634,9 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
    *Test Loss=0.41547
    *AUC=0.89834
    *BAcc=0.77273
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.65800; val loss = 0.67109
 #1: train loss = 0.58093; val loss = 0.57275
 #2: train loss = 0.51401; val loss = 0.50219
@@ -584,6 +652,9 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
    *Test Loss=0.40801
    *AUC=0.90199
    *BAcc=0.79992
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.66417; val loss = 0.66825
 #1: train loss = 0.60342; val loss = 0.58405
 #2: train loss = 0.54924; val loss = 0.51268
@@ -600,6 +671,9 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
    *Test Loss=0.36799
    *AUC=0.93060
    *BAcc=0.84943
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.67050; val loss = 0.67098
 #1: train loss = 0.59786; val loss = 0.58618
 #2: train loss = 0.53845; val loss = 0.51454
@@ -615,6 +689,9 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
    *AUC=0.85849
    *BAcc=0.77412
 *** LR =  1e-05 ; WD =  0.0001 ; IMG_FTS =  2 ; TAB_FTS =  2  ***
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.68229; val loss = 0.69262
 #1: train loss = 0.67535; val loss = 0.66974
 #2: train loss = 0.66370; val loss = 0.65077
@@ -676,6 +753,9 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
    *Test Loss=0.45740
    *AUC=0.85085
    *BAcc=0.78247
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.69189; val loss = 0.69415
 #1: train loss = 0.67825; val loss = 0.68047
 #2: train loss = 0.66538; val loss = 0.66334
@@ -727,6 +807,9 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
    *Test Loss=0.50547
    *AUC=0.85187
    *BAcc=0.73945
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.68690; val loss = 0.69028
 #1: train loss = 0.67579; val loss = 0.67265
 #2: train loss = 0.66553; val loss = 0.65820
@@ -775,6 +858,9 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
    *Test Loss=0.51182
    *AUC=0.84903
    *BAcc=0.73214
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.68889; val loss = 0.68688
 #1: train loss = 0.67134; val loss = 0.67916
 #2: train loss = 0.65943; val loss = 0.65983
@@ -826,6 +912,9 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
    *Test Loss=0.44026
    *AUC=0.91650
    *BAcc=0.86485
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.71260; val loss = 0.69181
 #1: train loss = 0.69839; val loss = 0.69037
 #2: train loss = 0.68621; val loss = 0.68295
@@ -884,6 +973,9 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
    *AUC=0.86648
    *BAcc=0.81435
 *** LR =  0.001 ; WD =  0 ; IMG_FTS =  2 ; TAB_FTS =  2  ***
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.50863; val loss = 0.46184
 #1: train loss = 0.40488; val loss = 0.48666
 #2: train loss = 0.31300; val loss = 0.27111
@@ -908,6 +1000,9 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
    *Test Loss=0.25972
    *AUC=0.96642
    *BAcc=0.90422
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.48473; val loss = 0.50640
 #1: train loss = 0.39069; val loss = 0.45442
 #2: train loss = 0.36955; val loss = 0.47776
@@ -924,6 +1019,9 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
    *Test Loss=0.21733
    *AUC=0.97545
    *BAcc=0.91071
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.53945; val loss = 0.54327
 #1: train loss = 0.43702; val loss = 0.39018
 #2: train loss = 0.34135; val loss = 0.43309
@@ -941,6 +1039,9 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
    *Test Loss=0.28893
    *AUC=0.96266
    *BAcc=0.88231
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.54365; val loss = 0.49476
 #1: train loss = 0.43078; val loss = 0.42504
 #2: train loss = 0.38928; val loss = 0.46780
@@ -957,6 +1058,9 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
    *Test Loss=0.37243
    *AUC=0.92330
    *BAcc=0.86891
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.51100; val loss = 0.47297
 #1: train loss = 0.41726; val loss = 0.54039
 #2: train loss = 0.37253; val loss = 0.57922
@@ -968,6 +1072,9 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
    *AUC=0.88349
    *BAcc=0.78186
 *** LR =  0.0001 ; WD =  0 ; IMG_FTS =  2 ; TAB_FTS =  2  ***
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.64342; val loss = 0.65994
 #1: train loss = 0.57867; val loss = 0.54403
 #2: train loss = 0.51776; val loss = 0.47647
@@ -985,6 +1092,9 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
    *Test Loss=0.45436
    *AUC=0.88596
    *BAcc=0.81169
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.65030; val loss = 0.66233
 #1: train loss = 0.56435; val loss = 0.57585
 #2: train loss = 0.46848; val loss = 0.51270
@@ -1004,6 +1114,9 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
    *Test Loss=0.44507
    *AUC=0.89134
    *BAcc=0.78450
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.65346; val loss = 0.66373
 #1: train loss = 0.58012; val loss = 0.57399
 #2: train loss = 0.51903; val loss = 0.49833
@@ -1026,6 +1139,9 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
    *Test Loss=0.50208
    *AUC=0.87683
    *BAcc=0.79343
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.66728; val loss = 0.67090
 #1: train loss = 0.58678; val loss = 0.57474
 #2: train loss = 0.52079; val loss = 0.49030
@@ -1041,6 +1157,9 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
    *Test Loss=0.35953
    *AUC=0.93344
    *BAcc=0.85795
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.64163; val loss = 0.66557
 #1: train loss = 0.57567; val loss = 0.55673
 #2: train loss = 0.51903; val loss = 0.46310
@@ -1062,6 +1181,9 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
    *AUC=0.86375
    *BAcc=0.78297
 *** LR =  1e-05 ; WD =  0 ; IMG_FTS =  2 ; TAB_FTS =  2  ***
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.68229; val loss = 0.69263
 #1: train loss = 0.67535; val loss = 0.66973
 #2: train loss = 0.66369; val loss = 0.65072
@@ -1123,6 +1245,9 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
    *Test Loss=0.45845
    *AUC=0.84923
    *BAcc=0.78247
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.69189; val loss = 0.69416
 #1: train loss = 0.67824; val loss = 0.68048
 #2: train loss = 0.66536; val loss = 0.66335
@@ -1174,6 +1299,9 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
    *Test Loss=0.50311
    *AUC=0.85562
    *BAcc=0.74391
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.68690; val loss = 0.69029
 #1: train loss = 0.67578; val loss = 0.67261
 #2: train loss = 0.66551; val loss = 0.65817
@@ -1222,6 +1350,9 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
    *Test Loss=0.50861
    *AUC=0.85207
    *BAcc=0.74919
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.68888; val loss = 0.68687
 #1: train loss = 0.67133; val loss = 0.67915
 #2: train loss = 0.65943; val loss = 0.65984
@@ -1273,6 +1404,9 @@ Multifeature Problem: OR(AND(circle,A), AND(!triangle, B)); TRAINING =  ft_part 
    *Test Loss=0.44154
    *AUC=0.91477
    *BAcc=0.86039
+part part
+Weights loaded: img_c + tab_a
+Weights frozen: img_c + tab_a
 #0: train loss = 0.71260; val loss = 0.69180
 #1: train loss = 0.69838; val loss = 0.69035
 #2: train loss = 0.68618; val loss = 0.68295

@@ -1,12 +1,14 @@
 import sys
-sys.path.append('./dependencies')
+sys.path.append('/export/scratch2/ima/MultiFIX_GECCO25_code/dependencies')
+
 # Import custom methods and architectures
 from utils import *
 from architectures import *
 from dataset import *
 
 # Add the problem-specific config path to the Python system path
-sys.path.append('./problems')
+sys.path.append('/export/scratch2/ima/MultiFIX_GECCO25_code/problems')
+
 
 # GLOBAL CONSTANTS
 # Define the maximum number of epochs for training

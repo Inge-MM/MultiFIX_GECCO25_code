@@ -1,4 +1,4 @@
-# AND(circle,F1)
+# AND(circle,F1) # changed from orig repo
 def get_y(labels):
     y = []
     circle = labels['circle']

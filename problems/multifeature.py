@@ -1,3 +1,5 @@
+import os
+
 # OR(AND(circle,A), AND(!triangle, B))
 def get_y(labels, INPUT):
     y = []
@@ -42,10 +44,15 @@ OUT_SIZE = 1
 global INPUT
 INPUT = 'fusion' # Choose from 'img', 'tab', 'fusion' OR 'img_c'/'img_t' OR 'tab_a'/'tab_b'
 
-# Define the training mode: 'end' for end-to-end, 'seq' for sequential, or 'hyb' for hybrid
+# use this for training ↓ with hpo.py
+#TRAINING = os.environ.get('TRAINING')
+
+# use this for making GP files ↓
 global TRAINING
-TRAINING = 'ft_part'  # Choose from 'end', 'seq', or 'hyb'
-                  # OR 'ft_comp', 'ft_part', 'ft_none' for complete, partial and none freezing
+TRAINING = 'ft_comp_comp'   # Choose from:  'ft_comp_comp', 'ft_comp_part', 'ft_comp_none'
+                            #               'ft_part_part', 'ft_part_none'
+                            #               'ft_none_none'
+# Define the training mode: 'end' for end-to-end, 'seq' for sequential, or 'hyb' for hybrid
 
 # Define which weights to load for hybrid and sequential training
 global WTS
@@ -73,44 +80,56 @@ global TAB_FTS
 global BEST_FOLD
 global GP_DIR
 
-GP_DIR = './gp_files/ANDOR/' + TRAINING + '_' + WTS + '_' + str(TEMP_FREEZE) + '/'
+GP_DIR = './gp_files/Multifeature/' + TRAINING + '_' + WTS + '_' + str(TEMP_FREEZE) + '/'
 
-if TRAINING == 'end': 
-    IMG_FTS = 3
+# setting ACTUAL best seeds:
+
+if INPUT == 'fusion': 
+    IMG_FTS = 2
     TAB_FTS = 2
-    LR = 1e-3
-    WD = 1e-3
-    BEST_FOLD = 2
-elif TRAINING == 'hyb': 
-    if WTS == 'ae': 
-        IMG_FTS = 2
-        TAB_FTS = 3
-        LR = 1e-3
-        WD = 1e-4
+
+    if TRAINING == 'ft_comp_comp':
+        LR = 0.001
+        WD = 0.0
         BEST_FOLD = 2
-    else: # single
-        IMG_FTS = 3
-        TAB_FTS = 3
-        LR = 1e-3
-        WD = 1e-4
-        BEST_FOLD = 2
-else: # seq
-    if WTS == 'ae':
-        if TEMP_FREEZE == False: 
-            IMG_FTS = 2
-            TAB_FTS = 3
-            LR = 1e-3
-            WD = 1e-3
-            BEST_FOLD = 0
-        else: 
-            IMG_FTS = 2
-            TAB_FTS = 3
-            LR = 1e-4
-            WD = 0
-            BEST_FOLD = 4
-    else: 
-        IMG_FTS = 2
-        TAB_FTS = 2
-        LR = 1e-3
-        WD = 0
+    
+    elif TRAINING == 'ft_comp_part': # done but not using for GP
+        LR = 0.0001
+        WD = 0.0001
         BEST_FOLD = 3
+    
+    elif TRAINING == 'ft_comp_none': # done but not using for GP
+        LR = 0.0001
+        WD = 0.0001
+        BEST_FOLD = 3
+
+    elif TRAINING == 'ft_part_part': # done
+        LR = 0.001
+        WD = 0.001
+        BEST_FOLD = 3
+
+    
+    elif TRAINING == 'ft_part_none':
+        LR = 0.001
+        WD = 0.0001
+        BEST_FOLD = 4
+
+    
+    elif TRAINING == 'ft_none_none':
+        LR = 0.001
+        WD = 0.0
+        BEST_FOLD = 4
+
+    else:
+        print('NO KNOWN BEST FOLD')
+
+
+
+# I accidentally ran the things below for each model, so I need to rerun
+'''
+else: 
+    IMG_FTS = 2
+    TAB_FTS = 2
+    BEST_FOLD = 3
+    # when I ran everything with these settings, i also used the original LR and WD but those don't get used so I will not be rerunning those experimentts
+'''

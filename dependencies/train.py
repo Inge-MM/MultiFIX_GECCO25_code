@@ -192,49 +192,66 @@ def initialise_model(fold, nas, XAI=False):
     
     elif INPUT in ['tab_a', 'tab_b']: model = single_tab_net(OUT_SIZE)
 
-    elif INPUT == 'tab': single_tab_net(OUT_SIZE)
+    elif INPUT == 'tab': model = single_tab_net(OUT_SIZE)
 
     #TODO if input == A etc
     # if model.circle_weights != none load weights
     
-    elif INPUT == 'fusion' and TRAINING in ['ft_comp', 'ft_part']: # ft = fusion test
+    elif INPUT == 'fusion':
         model = multifix_net_test(nas, OUT_SIZE)
-        # img
-        if model.img_c_block is not None:
-            img_c_wts = torch.load(MODEL_DIR + 'img_c' + str(fold) + '.pth', map_location=DEVICE)
-            #resnet_c_wts = {k: v for k, v in img_c_wts.items() if not k.startswith('classifier')}
-            model.img_c_block.load_state_dict(img_c_wts, strict=False)
-        # tab
-        if model.tab_a_block is not None:
-            tab_a_wts = torch.load(MODEL_DIR + 'tab_a' + str(fold) + '.pth', map_location=DEVICE)
-            #fts_a_wts = {k.replace('fts.', '', 1): v for k, v in tab_a_wts.items() if not k.startswith('classifier')}
-            model.tab_a_block.load_state_dict(tab_a_wts)#, strict=False)
+
+        training_args = TRAINING.split('_')
+
+        if len(training_args) == 3: # seeing that there is a part for loading weights, and freezing weights:
+            train_load = training_args[1]
+            train_freeze = training_args[2]
+            print(train_load, train_freeze)
+
+        if train_load in ['comp', 'part']: # ft = fusion test
+             # img c
+            if model.img_c_block is not None:
+                img_c_wts = torch.load(MODEL_DIR + 'img_c' + str(fold) + '.pth', map_location=DEVICE)
+                model.img_c_block.load_state_dict(img_c_wts, strict=False)
+            # tab a
+            if model.tab_a_block is not None:
+                tab_a_wts = torch.load(MODEL_DIR + 'tab_a' + str(fold) + '.pth', map_location=DEVICE)
+                model.tab_a_block.load_state_dict(tab_a_wts)#, strict=False)
+
+            print(f'Weights loaded: img_c + tab_a')
+
+            if train_load == 'comp':
+                # img t
+                if model.img_t_block is not None:
+                    img_t_wts = torch.load(MODEL_DIR + 'img_t' + str(fold) + '.pth', map_location=DEVICE)
+                    model.img_t_block.load_state_dict(img_t_wts, strict=False)
+                # tab b
+                if model.tab_b_block is not None:
+                    tab_b_wts = torch.load(MODEL_DIR + 'tab_b' + str(fold) + '.pth', map_location=DEVICE)
+                    model.tab_b_block.load_state_dict(tab_b_wts)#, strict=False)
+                
+                print(f'Weights loaded: img_t + tab_b')
+
+        elif train_load == 'none':
+            print(f'Weights loaded: NONE')
         
-        # img
-        if model.img_t_block is not None:
-            img_t_wts = torch.load(MODEL_DIR + 'img_t' + str(fold) + '.pth', map_location=DEVICE)
-            #resnet_t_wts = {k: v for k, v in img_t_wts.items() if not k.startswith('classifier')}
-            model.img_t_block.load_state_dict(img_t_wts, strict=False)
-        # tab
-        if model.tab_b_block is not None:
-            tab_b_wts = torch.load(MODEL_DIR + 'tab_b' + str(fold) + '.pth', map_location=DEVICE)
-            #fts_b_wts = {k.replace('fts.', '', 1): v for k, v in tab_b_wts.items() if not k.startswith('classifier')}
-            model.tab_b_block.load_state_dict(tab_b_wts)#, strict=False)
-
         # freezing params
-        for block in [model.img_c_block, model.img_t_block]:
-            for param in block.parameters():
-                param.requires_grad = False
-
-        if TRAINING == 'ft_comp':
-            # freezing params
-            for block in [model.img_t_block, model.img_c_block]:
+        if train_freeze == 'comp':
+            freeze_list = [model.img_c_block, model.tab_a_block, model.img_t_block, model.tab_b_block]
+            for block in freeze_list:
                 for param in block.parameters():
                     param.requires_grad = False
+            print(f'Weights frozen: img_c + img_t + tab_a + tab_b')
 
 
-    elif TRAINING == 'ft_none':
-        model = multifix_net_test(nas, OUT_SIZE)
+        elif train_freeze == 'part':
+            freeze_list = [model.img_c_block, model.tab_a_block]
+            for block in freeze_list:
+                for param in block.parameters():
+                    param.requires_grad = False
+            print(f'Weights frozen: img_c + tab_a')
+
+        elif train_freeze == 'none':
+            print(f'Weights frozen: NONE')
 
     else: # fusion
         model = multifix_net(nas, OUT_SIZE)
